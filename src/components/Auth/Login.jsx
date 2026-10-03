@@ -7,11 +7,12 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Login attempt with:', { email, password });
+    setEmail('')
+    setPassword('')
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-cyan-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-50 via-white to-cyan-50 p-4">
       <div className="max-w-md w-full bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 space-y-8">
         
         <div className="text-center">
@@ -28,7 +29,9 @@ const Login = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={(e)=>{
+          handleSubmit(e)
+        }} className="space-y-6">
           
           <div className="space-y-1">
             <label htmlFor="email" className="block text-sm font-semibold text-gray-700">
